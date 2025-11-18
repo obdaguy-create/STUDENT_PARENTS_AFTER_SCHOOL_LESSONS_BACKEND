@@ -242,7 +242,7 @@ app.use((err, req, res, next) => {
 // Start server
 //app.listen(PORT, () => {
  // console.log(`Express server listening on http://localhost:${PORT}`);});
-const port = process.env.PORT|| 3000;
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
