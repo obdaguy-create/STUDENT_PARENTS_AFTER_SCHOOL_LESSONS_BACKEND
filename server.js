@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 // Logger middleware (required)
 app.use((req, res, next) => {
   // log method, url, and body for inspectability
-  console.log(
+    console.log(
     new Date().toISOString(),
     req.method,
     req.originalUrl,
@@ -240,6 +240,9 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`Express server listening on http://localhost:${PORT}`);
+//app.listen(PORT, () => {
+ // console.log(`Express server listening on http://localhost:${PORT}`);});
+const port = process.env.PORT|| 3000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
