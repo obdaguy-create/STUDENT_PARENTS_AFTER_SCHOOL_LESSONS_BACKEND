@@ -18,6 +18,8 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
+const PORT = process.env.PORT;
+const NODE_ENV = process.env.NODE_ENV || 'development';
 //const PORT = process.env.PORT || 8080;
 
 // ===== Middleware =====
@@ -248,17 +250,28 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-//app.listen(PORT, () => {
- // console.log(`Express server listening on http://localhost:${PORT}`);});
-// Environment variables
-const PORT = process.env.PORT;
-const NODE_ENV = process.env.NODE_ENV || 'development';
+async function startServer() {
+    try {
+        // Check PORT first
+        if (!PORT) {
+            console.error('❌ Error: process.env.PORT is not defined. Beanstalk requires it.');
+            process.exit(1);
+        }
 
-if (!PORT) {
-  console.error('Error: process.env.PORT is not defined. Beanstalk requires it.');
-  process.exit(1);
+        // Connect to database first
+        await startDb();
+        
+        // Then start the server
+        app.listen(PORT, '0.0.0.0', () => {
+            console.log(`🚀 Server running on port ${PORT} in ${NODE_ENV} mode`);
+            console.log(`✅ Database connected: ${DB_NAME}`);
+            console.log(`📊 Collections ready: Lessons, Orders`);
+        });
+    } catch (error) {
+        console.error('❌ Failed to start server:', error);
+        process.exit(1);
+    }
 }
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on port ${PORT} in ${NODE_ENV} mode`);
-});
+// Start the application
+startServer();
