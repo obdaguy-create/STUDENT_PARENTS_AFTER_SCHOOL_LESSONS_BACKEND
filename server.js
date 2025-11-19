@@ -58,7 +58,8 @@ app.get('/images/:filename', (req, res) => {
 //const MONGO_URI = 'mongodb+srv://MICHAEL:1Q2W3E@cluster0.0jkcsmn.mongodb.net/';
 //const DB_NAME = 'AFTER_SCHOOL_LESSONS';
 
-const MONGO_URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/`;
+const MONGO_URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`;
+
 const DB_NAME = process.env.DB_NAME;
 
 const client = new MongoClient(MONGO_URI, {
