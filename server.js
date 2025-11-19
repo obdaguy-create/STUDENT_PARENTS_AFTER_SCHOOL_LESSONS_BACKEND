@@ -61,15 +61,8 @@ app.get('/images/:filename', (req, res) => {
 const MONGO_URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/`;
 const DB_NAME = process.env.DB_NAME;
 
-
-
-// IMPROVED - Add connection options
 const client = new MongoClient(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  maxPoolSize: 10,
-  serverSelectionTimeoutMS: 5000,
-  socketTimeoutMS: 45000,
+  
 });
 
 let db, Lessons, Orders;
