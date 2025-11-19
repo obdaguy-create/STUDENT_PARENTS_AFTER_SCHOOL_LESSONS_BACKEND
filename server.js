@@ -251,8 +251,14 @@ app.use((err, req, res, next) => {
 //app.listen(PORT, () => {
  // console.log(`Express server listening on http://localhost:${PORT}`);});
 // Environment variables
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 const NODE_ENV = process.env.NODE_ENV || 'development';
+
+if (!PORT) {
+  console.error('Error: process.env.PORT is not defined. Beanstalk requires it.');
+  process.exit(1);
+}
+
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server running on port ${PORT} in ${NODE_ENV} mode`);
+  console.log(`Server running on port ${PORT} in ${NODE_ENV} mode`);
 });
