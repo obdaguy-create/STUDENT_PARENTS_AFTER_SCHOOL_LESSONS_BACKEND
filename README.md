@@ -10,7 +10,7 @@ This is a full stack web application for buying after-school classes and activit
 - [Vue.js App GitHub Repository](https://github.com/obdaguy-create/STUDENT_PARENTS_AFTER_SCHOOL_LESSONS_FRONTEND)
 - [Vue.js App GitHub Pages (Live Demo)](https://obdaguy-create.github.io/STUDENT_PARENTS_AFTER_SCHOOL_LESSONS_FRONTEND/)
 - [Express.js App GitHub Repository](https://github.com/obdaguy-create/STUDENT_PARENTS_AFTER_SCHOOL_LESSONS_BACKEND)
-- [Express.js App Render/AWS (Live API)](<YOUR_RENDER_OR_AWS_LINK>/lessons)
+- [Express.js App Render/AWS (Live API)](http://schooltest-env.eba-kjdsk8eq.ap-south-1.elasticbeanstalk.com/)
 
 ---
 
