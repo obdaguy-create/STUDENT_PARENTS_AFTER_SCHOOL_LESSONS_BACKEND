@@ -8,6 +8,8 @@
 // - Logging middleware, static files middleware, static images route with 404 handling
 // - No extra, no student ID in paths. Strictly coursework-compliant.
 
+require('dotenv').config(); // <---- Load .env variables
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -51,17 +53,13 @@ app.get('/images/:filename', (req, res) => {
   });
 });
 
-
 // ===== MongoDB connection setup =====
-// Use environment variables to keep credentials secure
-const DB_USER = process.env.DB_USER || 'MICHAEL';
-const DB_PASSWORD = process.env.DB_PASSWORD || '1Q2W3E';
-const DB_HOST = process.env.DB_HOST || 'cluster0.0jkcsmn.mongodb.net';
-const DB_NAME = process.env.DB_NAME || 'AFTER_SCHOOL_LESSONS';
-
-// Use your Atlas connection string here
+// =====Use your Atlas connection string here=====
 //const MONGO_URI = 'mongodb+srv://MICHAEL:1Q2W3E@cluster0.0jkcsmn.mongodb.net/';
 //const DB_NAME = 'AFTER_SCHOOL_LESSONS';
+
+const MONGO_URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/`;
+const DB_NAME = process.env.DB_NAME;
 
 const client = new MongoClient(MONGO_URI, {
   
