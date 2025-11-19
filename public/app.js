@@ -13,7 +13,7 @@
      spaces updated in DB and re-fetched so changes persist after refresh.
 */
 
-const BACKEND_BASE = 'http://afterschool-env.eba-miumtgxg.ap-south-1.elasticbeanstalk.com'; // <<-- set this to your running backend address
+const BACKEND_BASE = 'http://afterschoollessons-env.eba-hzm2bmsq.ap-south-1.elasticbeanstalk.com'; // <<-- set this to your running backend address
 
 
 // Build API path 
