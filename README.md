@@ -5,10 +5,16 @@ This is a full stack web application for buying after-school classes and activit
 
 ---
 
-## Links
+## FRONT END Links
 
 - [Vue.js App GitHub Repository](https://github.com/obdaguy-create/STUDENT_PARENTS_AFTER_SCHOOL_LESSONS_FRONTEND)
 - [Vue.js App GitHub Pages (Live Demo)](https://obdaguy-create.github.io/STUDENT_PARENTS_AFTER_SCHOOL_LESSONS_FRONTEND/)
+   IMPORTANT!!!!:
+   The GitHub Pages demo uses the CORS Anywhere proxy to bypass CORS restrictions from the backend.
+   Because GitHub Pages is HTTPS and the backend is HTTP, a proxy is required.
+   Before using the live demo, activate the demo server here:
+   https://cors-anywhere.herokuapp.com/corsdemo
+## BACK END Links
 - [Express.js App GitHub Repository](https://github.com/obdaguy-create/STUDENT_PARENTS_AFTER_SCHOOL_LESSONS_BACKEND)
 - [Express.js App Render/AWS (Live API)](http://schooltest-env.eba-kjdsk8eq.ap-south-1.elasticbeanstalk.com/)
 
@@ -62,4 +68,4 @@ This is a full stack web application for buying after-school classes and activit
 
 ---
 
-**Please replace all <...> placeholders with your actual links and information before submission.**
+
