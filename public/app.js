@@ -8,7 +8,13 @@
        PUT  /lessons/:id
    */
 
-const BACKEND_BASE = 'http://schooltest-env.eba-kjdsk8eq.ap-south-1.elasticbeanstalk.com'; // <<-- set this to your running backend address
+// app.js
+
+// Detect environment automatically
+const BACKEND_BASE = window.location.hostname.includes('github.io') 
+    ? 'https://schooltest-env.eba-kjdsk8eq.ap-south-1.elasticbeanstalk.com' // HTTPS for GitHub Pages
+    : 'http://schooltest-env.eba-kjdsk8eq.ap-south-1.elasticbeanstalk.com';  // HTTP for local/dev
+// <<-- set this to your running backend address
 
 
 // Build API path 
