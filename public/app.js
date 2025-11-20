@@ -8,7 +8,8 @@
        PUT  /lessons/:id
    */
 
-const BACKEND_BASE = 'http://schooltest-env.eba-kjdsk8eq.ap-south-1.elasticbeanstalk.com'; // <<-- set this to your running backend address
+const BACKEND_BASE = 'https://cors-anywhere.herokuapp.com/http://schooltest-env.eba-kjdsk8eq.ap-south-1.elasticbeanstalk.com';
+ // <<-- set this to your running backend address
 
 
 // Build API path 
